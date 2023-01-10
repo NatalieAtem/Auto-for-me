@@ -1,10 +1,8 @@
 package com.epam.tc.hw1;
 
-import org.assertj.core.api.AbstractBigDecimalAssert;
-import org.assertj.core.api.FloatingPointNumberAssert;
-
 import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
-import static org.junit.Assert.assertEquals;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class ArithmeticCalculatorMultiplication extends ArithmeticOperationsTesting {
 

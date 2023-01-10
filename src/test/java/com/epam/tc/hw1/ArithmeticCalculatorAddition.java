@@ -1,7 +1,8 @@
 package com.epam.tc.hw1;
 
-import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
+import static org.assertj.core.api.Assertions.assertThat;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class ArithmeticCalculatorAddition extends ArithmeticOperationsTesting {
 
@@ -16,17 +17,5 @@ public class ArithmeticCalculatorAddition extends ArithmeticOperationsTesting {
     public void sumTest(long a, long b, long expectedAddition) {
         long actualAddition = calculator.sum(a, b);
         assertThat(actualAddition).isEqualTo(expectedAddition);
-    }
-    @Test
-    public void binaryArithmeticOperationsTest() {
-        Assertions.assertEquals(2, 1 + 1);
-        Assertions.assertEquals(3, 2 + 1);
-        Assertions.assertEquals(5, 2 + 3);
-    }
-
-    @Test
-    public void precedenceOrderTest() {
-        Assertions.assertEquals(1, +1);
-        Assertions.assertEquals(-2, -2);
     }
 }

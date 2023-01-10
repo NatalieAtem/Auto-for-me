@@ -1,8 +1,11 @@
 package com.epam.tc.hw1;
 
-
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
 
 public class ArithmeticCalculatorDivision extends ArithmeticOperationsTesting {
     //деление

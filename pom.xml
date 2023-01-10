@@ -12,99 +12,107 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <testng>7.6.1</testng>
-    <calc>1.0</calc>
-    <assertj-core>3.23.1</assertj-core>
-    <maven-compiler-plugin>3.10.1</maven-compiler-plugin>
-    <maven-surefire-plugin>3.0.0-M7</maven-surefire-plugin>
+        <testng>7.6.1</testng>
+        <calc>1.0</calc>
+        <assertj-core>3.23.1</assertj-core>
+        <maven-compiler-plugin>3.10.1</maven-compiler-plugin>
+        <maven-surefire-plugin>3.0.0-M7</maven-surefire-plugin>
     </properties>
-<dependencies>
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>${testng}</version>
-    <scope>test</scope>
-</dependency>
-<dependency>
-    <groupId>com.calc</groupId>
-    <artifactId>calc</artifactId>
-    <version>${calc}</version>
-    <scope>system</scope>
-    <systemPath>${project.basedir}/calculator/calculator-1.0.jar</systemPath>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
-<dependency>
-    <groupId>org.assertj</groupId>
-    <artifactId>assertj-core</artifactId>
-    <version>${assertj-core}</version>
-    <scope>test</scope>
-</dependency>
-</dependencies>
-<build>
-<plugins>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin}</version>
-    </plugin>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${maven-surefire-plugin}</version>
-        <configuration>
-            <testFailureIgnore>true</testFailureIgnore>
-            <suiteXmlFiles>
-                <suiteXmlFile>${project.basedir}/src/test/resources/${suite.xml.file}</suiteXmlFile>
-            </suiteXmlFiles>
-        </configuration>
-    </plugin>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.2.0</version>
-        <configuration>
-            <configLocation>
-                https://raw.githubusercontent.com/DmitryKhodakovsky/epam-training-center-code-checkers-configurations/main/checkstyle/checkstyle.xml
-            </configLocation>
-            <includeTestSourceDirectory>true</includeTestSourceDirectory>
-            <consoleOutput>true</consoleOutput>
-            <failsOnError>true</failsOnError>
-            <linkXRef>false</linkXRef>
-        </configuration>
-        <executions>
-            <execution>
-                <id>validate</id>
-                <phase>validate</phase>
-                <goals>
-                    <goal>check</goal>
-                </goals>
-            </execution>
-        </executions>
-    </plugin>
-</plugins>
-</build>
-<profiles>
-<profile>
-    <id>AdditionSubtraction</id>
-    <activation>
-        <activeByDefault>true</activeByDefault>
-    </activation>
-    <properties>
-        <suite.xml.file>suiteAddSubtractionTest.xml</suite.xml.file>
-    </properties>
-</profile>
-<profile>
-    <id>MultiplicationDivision</id>
-    <properties>
-        <suite.xml.file>suiteMultipleDivideTest.xml</suite.xml.file>
-    </properties>
-</profile>
-<profile>
-    <id>AllTest</id>
-    <properties>
-        <suite.xml.file>suiteToRunAllTest.xml</suite.xml.file>
-    </properties>
-</profile>
-</profiles>
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.calc</groupId>
+            <artifactId>calc</artifactId>
+            <version>${calc}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/calculator/calculator-1.0.jar</systemPath>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin}</version>
+                <configuration>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <source>${java.source.version}</source>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <target>${java.target.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin}</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${project.basedir}/src/test/resources/${suite.xml.file}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <configLocation>
+                        https://raw.githubusercontent.com/DmitryKhodakovsky/epam-training-center-code-checkers-configurations/main/checkstyle/checkstyle.xml
+                    </configLocation>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>AdditionSubtraction</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.file>suiteAddSubtractionTest.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>MultiplicationDivision</id>
+            <properties>
+                <suite.xml.file>suiteMultipleDivideTest.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>AllTest</id>
+            <properties>
+                <suite.xml.file>suiteToRunAllTest.xml</suite.xml.file>
+            </properties>
+        </profile>
+    </profiles>
 </project>
