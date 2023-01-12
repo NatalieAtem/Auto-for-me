@@ -1,16 +1,15 @@
 package com.epam.tc.hw1;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class ArithmeticCalculatorAddition extends ArithmeticOperationsTesting {
+import static org.assertj.core.api.Assertions.assertThat;
 
-    // сложение
+public class ArithmeticCalculatorAdditionTest extends BaseTest {
 
     @DataProvider(name = "data-provider-for-addition")
     public Object[][] dataSetForAddition() {
-        return new Object[][]{{1, 2, 3}, {-1, -2, 0}, {1, 1, -2}, {0, 0, 0}};
+        return new Object[][]{{1, 2, 3}, {-1, -2, -3}, {1, 1, 2}, {0, 0, 0}};
     }
 
     @Test(dataProvider = "data-provider-for-addition", groups = {"subAdd"})

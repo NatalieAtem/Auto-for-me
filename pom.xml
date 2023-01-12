@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <testng>7.6.1</testng>
+        <testng>7.7.0</testng>
         <calc>1.0</calc>
         <assertj-core>3.23.1</assertj-core>
         <maven-compiler-plugin>3.10.1</maven-compiler-plugin>

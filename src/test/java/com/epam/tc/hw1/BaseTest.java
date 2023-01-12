@@ -1,11 +1,10 @@
 package com.epam.tc.hw1;
 
-import epam.Calculator;
+import com.epam.tat.module4.Calculator;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-
-abstract class ArithmeticOperationsTesting {
+abstract class BaseTest {
     protected Calculator calculator;
 
     @BeforeMethod(groups = {"subAdd", "divMultiplication"})

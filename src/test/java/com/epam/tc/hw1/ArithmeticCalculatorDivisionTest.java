@@ -1,14 +1,12 @@
 package com.epam.tc.hw1;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-public class ArithmeticCalculatorDivision extends ArithmeticOperationsTesting {
-    //деление
+public class ArithmeticCalculatorDivisionTest extends BaseTest {
 
     @DataProvider(name = "data-provider-for-division")
     public Object[][] dataSetForDivision() {

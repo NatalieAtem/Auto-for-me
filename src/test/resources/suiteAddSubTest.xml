@@ -8,9 +8,9 @@
             </run>
         </groups>
         <classes>
-            <class name="com.epam.tc.hw1.ArithmeticCalculatorSubtraction"/>
-            <class name="com.epam.tc.hw1.ArithmeticCalculatorAddition"/>
-            <class name="com.epam.tc.hw1.ArithmeticOperationsTesting"/>
+            <class name="com.epam.tc.hw1.ArithmeticCalculatorSubtractionTest"/>
+            <class name="com.epam.tc.hw1.ArithmeticCalculatorAdditionTest"/>
+            <class name="com.epam.tc.hw1.BaseTest"/>
         </classes>
     </test>
 </suite>
