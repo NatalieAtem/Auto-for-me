@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 public class ArithmeticCalculatorAdditionTest extends BaseTest {
 
     @DataProvider(name = "data-provider-for-addition")

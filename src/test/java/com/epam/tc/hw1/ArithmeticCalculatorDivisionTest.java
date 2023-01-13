@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
+
 public class ArithmeticCalculatorDivisionTest extends BaseTest {
 
     @DataProvider(name = "data-provider-for-division")
