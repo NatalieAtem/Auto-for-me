@@ -32,7 +32,7 @@ public class TestEx1 extends Initialize {
     }
 
     //3. Perform login
-    //4 .Assert Username is logged
+    //4. Assert Username is logged
 
 
     public void assertLogin() {
