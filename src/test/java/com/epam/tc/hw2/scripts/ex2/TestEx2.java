@@ -1,5 +1,6 @@
 package com.epam.tc.hw2.scripts.ex2;
 
+import com.epam.tc.hw2.Initialize;
 import com.epam.tc.hw2.InitializeKillWebSite;
 import java.time.Duration;
 import org.assertj.core.api.SoftAssertions;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class TestEx2 extends Initialize {
+public class TestEx1 extends Initialize {
     @Test
     public void verifyDifferentElementsPage() {
 

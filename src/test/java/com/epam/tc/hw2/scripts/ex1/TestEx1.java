@@ -1,16 +1,16 @@
 package com.epam.tc.hw2.scripts.ex1;
 
 import com.epam.tc.hw2.Initialize;
-import com.epam.tc.hw2.Initialize;
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 public class TestEx1 extends Initialize {
     @Test
     public void verifyMainPage() {
