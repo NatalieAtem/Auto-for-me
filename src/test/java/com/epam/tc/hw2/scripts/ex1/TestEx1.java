@@ -1,6 +1,6 @@
 package com.epam.tc.hw2.scripts.ex1;
 
-import com.epam.tc.hw2.Initialize;
+import com.epam.tc.hw2.BaseTest;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-public class TestEx1 extends Initialize {
+public class TestEx1 extends BaseTest {
     @Test
     public void verifyMainPage() {
         assertTitle();
@@ -62,10 +62,10 @@ public class TestEx1 extends Initialize {
         WebElement serviceElement = driver.findElement(By.partialLinkText("SERVICE"));
         WebElement metalsColorsElement = driver.findElement(By.partialLinkText("METALS & COLORS"));
         SoftAssertions softHeader = new SoftAssertions();
-        softHeader.assertThat(homeElement.isDisplayed());
-        softHeader.assertThat(contactFormElement.isDisplayed());
-        softHeader.assertThat(serviceElement.isDisplayed());
-        softHeader.assertThat(metalsColorsElement.isDisplayed());
+        softHeader.assertThat(homeElement.isDisplayed()).isTrue();
+        softHeader.assertThat(contactFormElement.isDisplayed()).isTrue();
+        softHeader.assertThat(serviceElement.isDisplayed()).isTrue();
+        softHeader.assertThat(metalsColorsElement.isDisplayed()).isTrue();
         softHeader.assertAll();
     }
 
@@ -83,10 +83,10 @@ public class TestEx1 extends Initialize {
         WebElement iconMulti = driver.findElement(By.cssSelector(".icon-multi"));
         WebElement iconBase = driver.findElement(By.cssSelector(".icon-base"));
         SoftAssertions softImages = new SoftAssertions();
-        softImages.assertThat(iconPractise.isDisplayed());
-        softImages.assertThat(iconCustom.isDisplayed());
-        softImages.assertThat(iconMulti.isDisplayed());
-        softImages.assertThat(iconBase.isDisplayed());
+        softImages.assertThat(iconPractise.isDisplayed()).isTrue();
+        softImages.assertThat(iconCustom.isDisplayed()).isTrue();
+        softImages.assertThat(iconMulti.isDisplayed()).isTrue();
+        softImages.assertThat(iconBase.isDisplayed()).isTrue();
         softImages.assertAll();
     }
 
@@ -123,7 +123,7 @@ public class TestEx1 extends Initialize {
         driver.switchTo().frame("frame");
         WebElement frameButton = driver.findElement(By.id("frame-button"));
         SoftAssertions softFrameButton = new SoftAssertions();
-        softFrameButton.assertThat(frameButton.isDisplayed());
+        softFrameButton.assertThat(frameButton.isDisplayed()).isTrue();
         softFrameButton.assertAll();
         driver.switchTo().defaultContent();
     }

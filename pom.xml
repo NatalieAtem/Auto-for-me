@@ -27,49 +27,30 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.metalloid-project</groupId>
-            <artifactId>metalloid-expected-conditions</artifactId>
-            <version>2.3.1</version>
-        </dependency>
-        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.8.0</version>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.webdriver</groupId>
-            <artifactId>webdriver-parent</artifactId>
-            <version>0.9.7376</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.sbtqa</groupId>
+            <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>2.2.3</version>
+            <version>5.3.0</version>
         </dependency>
         <dependency>
-            <groupId>pl.oakfusion</groupId>
-            <artifactId>chromedriver</artifactId>
-            <version>2.9</version>
+            <groupId>com.github.metalloid-project</groupId>
+            <artifactId>metalloid-expected-conditions</artifactId>
+            <version>2.3.1</version>
         </dependency>
         <dependency>
-            <groupId>io.metersphere</groupId>
-            <artifactId>jmeter-plugins-webdriver</artifactId>
-            <version>3.4.3</version>
+            <groupId>com.github.metalloid-project</groupId>
+            <artifactId>metalloid-webelement-name</artifactId>
+            <version>2.0</version>
         </dependency>
         <dependency>
-            <groupId>kg.apc</groupId>
-            <artifactId>jmeter-plugins-webdriver</artifactId>
-            <version>4.7.2</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.stqa.selenium</groupId>
-            <artifactId>decorated-webdriver</artifactId>
-            <version>4.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.webdriver</groupId>
-            <artifactId>webdriver-htmlunit</artifactId>
-            <version>0.9.7376</version>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.8.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

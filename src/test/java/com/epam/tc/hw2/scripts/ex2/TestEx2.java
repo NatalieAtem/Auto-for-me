@@ -1,8 +1,6 @@
 package com.epam.tc.hw2.scripts.ex2;
 
-import com.epam.tc.hw2.Initialize;
-import com.epam.tc.hw2.InitializeKillWebSite;
-import java.time.Duration;
+import com.epam.tc.hw2.BaseTest;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,7 +10,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class TestEx1 extends Initialize {
+import java.time.Duration;
+
+public class TestEx2 extends BaseTest {
     @Test
     public void verifyDifferentElementsPage() {
 
@@ -40,7 +40,7 @@ public class TestEx1 extends Initialize {
         driver.findElement(By.id("user-icon")).click();
         driver.findElement(By.id("name")).sendKeys("Roman");
         driver.findElement(By.id("password")).sendKeys("Jdi1234");
-        driver.findElement(By.id(("login-button"))).click();;
+        driver.findElement(By.id(("login-button"))).click();
         By userName = By.id("user-name");
         WebElement userNameElement = driver.findElement(userName);
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOf(userNameElement));
@@ -116,9 +116,9 @@ public class TestEx1 extends Initialize {
         WebElement selenLog = driver.findElement(new By.ByXPath(selenLogPath));
         WebElement yellowLog = driver.findElement(new By.ByXPath(yellowLogPath));
         SoftAssertions softLog = new SoftAssertions();
-        softLog.assertThat(waterLog.isDisplayed());
-        softLog.assertThat(windLog.isDisplayed());
-        softLog.assertThat(selenLog.isDisplayed());
-        softLog.assertThat(yellowLog.isDisplayed());
+        softLog.assertThat(waterLog.isDisplayed()).isTrue();
+        softLog.assertThat(windLog.isDisplayed()).isTrue();
+        softLog.assertThat(selenLog.isDisplayed()).isTrue();
+        softLog.assertThat(yellowLog.isDisplayed()).isTrue();
     }
 }
