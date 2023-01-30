@@ -13,7 +13,9 @@
         <maven.compiler.target>15</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -52,6 +54,7 @@
             <version>4.8.0</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 </project>

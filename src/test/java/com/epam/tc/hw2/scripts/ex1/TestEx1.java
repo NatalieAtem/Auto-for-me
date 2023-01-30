@@ -4,13 +4,13 @@ import com.epam.tc.hw2.BaseTest;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class TestEx1 extends BaseTest {
     @Test
     public void verifyMainPage() {
@@ -23,6 +23,7 @@ public class TestEx1 extends BaseTest {
         assertSideMenu();
     }
 
+    //1. Open test site by URL_HOME_PAGE
     //2. Assert Browser title
 
     public void assertTitle() {
@@ -42,10 +43,8 @@ public class TestEx1 extends BaseTest {
         driver.findElement(By.id(("login-button"))).click();
         By userName = By.id("user-name");
         WebElement userNameElement = driver.findElement(userName);
-        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOf(userNameElement));
-        SoftAssertions softLogin = new SoftAssertions();
-        softLogin.assertThat(userNameElement.getText()).isEqualTo("ROMAN IOVLEV");
-        softLogin.assertAll();
+        assertThat(userNameElement.getText()).isEqualTo("ROMAN IOVLEV");
+
     }
 
     //5. Assert that there are 4 items on the header section are displayed, and they have proper texts

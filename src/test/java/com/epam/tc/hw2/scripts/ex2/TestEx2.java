@@ -5,12 +5,13 @@ import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestEx2 extends BaseTest {
     @Test
@@ -24,7 +25,7 @@ public class TestEx2 extends BaseTest {
         assertDropDown();
         assertLogger();
     }
-
+    //1. Open test site by URL_HOME_PAGE
     //2. Assert Browser title
 
     public void assertTitle() {
@@ -43,10 +44,8 @@ public class TestEx2 extends BaseTest {
         driver.findElement(By.id(("login-button"))).click();
         By userName = By.id("user-name");
         WebElement userNameElement = driver.findElement(userName);
-        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOf(userNameElement));
-        SoftAssertions softLogin = new SoftAssertions();
-        softLogin.assertThat(userNameElement.getText()).isEqualTo("ROMAN IOVLEV");
-        softLogin.assertAll();
+        assertThat(userNameElement.getText()).isEqualTo("ROMAN IOVLEV");
+
     }
 
     //5. Open through the header menu Service -> Different Elements Page
