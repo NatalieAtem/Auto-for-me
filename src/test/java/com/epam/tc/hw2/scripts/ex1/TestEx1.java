@@ -121,9 +121,7 @@ public class TestEx1 extends BaseTest {
     public void assertIframe() {
         driver.switchTo().frame("frame");
         WebElement frameButton = driver.findElement(By.id("frame-button"));
-        SoftAssertions softFrameButton = new SoftAssertions();
-        softFrameButton.assertThat(frameButton.isDisplayed()).isTrue();
-        softFrameButton.assertAll();
+        assertThat(frameButton.isDisplayed()).isTrue();
         driver.switchTo().defaultContent();
     }
 

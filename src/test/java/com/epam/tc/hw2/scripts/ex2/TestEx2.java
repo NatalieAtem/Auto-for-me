@@ -119,5 +119,6 @@ public class TestEx2 extends BaseTest {
         softLog.assertThat(windLog.isDisplayed()).isTrue();
         softLog.assertThat(selenLog.isDisplayed()).isTrue();
         softLog.assertThat(yellowLog.isDisplayed()).isTrue();
+        softLog.assertAll();
     }
 }

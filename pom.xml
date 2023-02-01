@@ -56,5 +56,16 @@
         </dependency>
 
     </dependencies>
+    <profiles>
+        <profile>
+            <id>suiteRunAllTest.Hw2</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.file>SuiteTestHM2.xml</suite.xml.file>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
