@@ -29,9 +29,8 @@ public class TestEx2 extends BaseTest {
     //2. Assert Browser title
 
     public void assertTitle() {
-        SoftAssertions softTitle = new SoftAssertions();
-        softTitle.assertThat(driver.getTitle()).isEqualTo("Home Page");
-        softTitle.assertAll();
+        assertThat(driver.getTitle()).isEqualTo("Home Page");
+
     }
 
     //3. Perform login
@@ -57,9 +56,7 @@ public class TestEx2 extends BaseTest {
         menuItemDifferentElements.click();
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(dr -> ((JavascriptExecutor) dr).executeScript("return document.readyState").equals("complete"));
-        SoftAssertions softDifferentElements = new SoftAssertions();
-        softDifferentElements.assertThat(driver.getTitle()).isEqualTo("Different Elements");
-        softDifferentElements.assertAll();
+        assertThat(driver.getTitle()).isEqualTo("Different Elements");
     }
 
     //6. Select checkboxes, Elements are checked
@@ -71,10 +68,10 @@ public class TestEx2 extends BaseTest {
         WebElement windCheckBoxElement = driver.findElement(windCheckBox);
         waterCheckBoxElement.click();
         windCheckBoxElement.click();
-        SoftAssertions softCheckBox = new SoftAssertions();
-        softCheckBox.assertThat(waterCheckBoxElement.isSelected()).isTrue();
-        softCheckBox.assertThat(windCheckBoxElement.isSelected()).isTrue();
-        softCheckBox.assertAll();
+        SoftAssertions softAssertions = new SoftAssertions();
+        softAssertions.assertThat(waterCheckBoxElement.isSelected()).isTrue();
+        softAssertions.assertThat(windCheckBoxElement.isSelected()).isTrue();
+        softAssertions.assertAll();
     }
 
     //7. Select radio, Element is checked
@@ -83,9 +80,7 @@ public class TestEx2 extends BaseTest {
         By radioSelen = new By.ByXPath("//label[text()[contains(., ' Selen')]]/*[@type='radio']");
         WebElement radioSelenElement = driver.findElement(radioSelen);
         driver.findElement(radioSelen).click();
-        SoftAssertions softRadio = new SoftAssertions();
-        softRadio.assertThat(radioSelenElement.isSelected()).isTrue();
-        softRadio.assertAll();
+        assertThat(radioSelenElement.isSelected()).isTrue();
     }
 
     //8. Select in dropdown, Element is selected
@@ -95,9 +90,7 @@ public class TestEx2 extends BaseTest {
         driver.findElement(dropDownColor).click();
         Select dropDownColors = new Select(driver.findElement(dropDownColor));
         dropDownColors.selectByVisibleText("Yellow");
-        SoftAssertions softDropDown = new SoftAssertions();
-        softDropDown.assertThat(dropDownColors.getFirstSelectedOption().getText()).isEqualTo("Yellow");
-        softDropDown.assertAll();
+        assertThat(dropDownColors.getFirstSelectedOption().getText()).isEqualTo("Yellow");
     }
 
     //9. Assert that for each checkbox there is an individual log row
@@ -114,11 +107,11 @@ public class TestEx2 extends BaseTest {
         WebElement windLog = driver.findElement(new By.ByXPath(windLogPath));
         WebElement selenLog = driver.findElement(new By.ByXPath(selenLogPath));
         WebElement yellowLog = driver.findElement(new By.ByXPath(yellowLogPath));
-        SoftAssertions softLog = new SoftAssertions();
-        softLog.assertThat(waterLog.isDisplayed()).isTrue();
-        softLog.assertThat(windLog.isDisplayed()).isTrue();
-        softLog.assertThat(selenLog.isDisplayed()).isTrue();
-        softLog.assertThat(yellowLog.isDisplayed()).isTrue();
-        softLog.assertAll();
+        SoftAssertions softAssertions = new SoftAssertions();
+        softAssertions.assertThat(waterLog.isDisplayed()).isTrue();
+        softAssertions.assertThat(windLog.isDisplayed()).isTrue();
+        softAssertions.assertThat(selenLog.isDisplayed()).isTrue();
+        softAssertions.assertThat(yellowLog.isDisplayed()).isTrue();
+        softAssertions.assertAll();
     }
 }

@@ -27,9 +27,7 @@ public class TestEx1 extends BaseTest {
     //2. Assert Browser title
 
     public void assertTitle() {
-        SoftAssertions softTitle = new SoftAssertions();
-        softTitle.assertThat(driver.getTitle()).isEqualTo("Home Page");
-        softTitle.assertAll();
+        assertThat(driver.getTitle()).isEqualTo("Home Page");
     }
 
     //3. Perform login
@@ -53,19 +51,17 @@ public class TestEx1 extends BaseTest {
         String sideMenuPath = "ul.uui-navigation.nav.navbar-nav.m-l8 > li";
         List<WebElement> header = driver.findElements(By.cssSelector(sideMenuPath));
         int headerMenuItemsSize = header.size();
-        SoftAssertions softHeaderSize = new SoftAssertions();
-        softHeaderSize.assertThat(headerMenuItemsSize).isEqualTo(4);
-        softHeaderSize.assertAll();
+        assertThat(headerMenuItemsSize).isEqualTo(4);
         WebElement homeElement = driver.findElement(By.partialLinkText("HOME"));
         WebElement contactFormElement = driver.findElement(By.partialLinkText("CONTACT FORM"));
         WebElement serviceElement = driver.findElement(By.partialLinkText("SERVICE"));
         WebElement metalsColorsElement = driver.findElement(By.partialLinkText("METALS & COLORS"));
-        SoftAssertions softHeader = new SoftAssertions();
-        softHeader.assertThat(homeElement.isDisplayed()).isTrue();
-        softHeader.assertThat(contactFormElement.isDisplayed()).isTrue();
-        softHeader.assertThat(serviceElement.isDisplayed()).isTrue();
-        softHeader.assertThat(metalsColorsElement.isDisplayed()).isTrue();
-        softHeader.assertAll();
+        SoftAssertions softAssertions = new SoftAssertions();
+        softAssertions.assertThat(homeElement.isDisplayed()).isTrue();
+        softAssertions.assertThat(contactFormElement.isDisplayed()).isTrue();
+        softAssertions.assertThat(serviceElement.isDisplayed()).isTrue();
+        softAssertions.assertThat(metalsColorsElement.isDisplayed()).isTrue();
+        softAssertions.assertAll();
     }
 
 
@@ -74,19 +70,17 @@ public class TestEx1 extends BaseTest {
     public void assertImages() {
         List<WebElement> listOfTheImages = driver.findElements(By.className("benefit-icon"));
         int numberOfImages = listOfTheImages.size();
-        SoftAssertions softNumberImages = new SoftAssertions();
-        softNumberImages.assertThat(numberOfImages).isEqualTo(4);
-        softNumberImages.assertAll();
+        assertThat(numberOfImages).isEqualTo(4);
         WebElement iconPractise = driver.findElement(By.cssSelector(".icon-practise"));
         WebElement iconCustom = driver.findElement(By.cssSelector(".icon-custom"));
         WebElement iconMulti = driver.findElement(By.cssSelector(".icon-multi"));
         WebElement iconBase = driver.findElement(By.cssSelector(".icon-base"));
-        SoftAssertions softImages = new SoftAssertions();
-        softImages.assertThat(iconPractise.isDisplayed()).isTrue();
-        softImages.assertThat(iconCustom.isDisplayed()).isTrue();
-        softImages.assertThat(iconMulti.isDisplayed()).isTrue();
-        softImages.assertThat(iconBase.isDisplayed()).isTrue();
-        softImages.assertAll();
+        SoftAssertions softAssertions = new SoftAssertions();
+        softAssertions.assertThat(iconPractise.isDisplayed()).isTrue();
+        softAssertions.assertThat(iconCustom.isDisplayed()).isTrue();
+        softAssertions.assertThat(iconMulti.isDisplayed()).isTrue();
+        softAssertions.assertThat(iconBase.isDisplayed()).isTrue();
+        softAssertions.assertAll();
     }
 
     //7. Assert that there are 4 texts on the Index Page under icons, and they have proper text
@@ -108,10 +102,10 @@ public class TestEx1 extends BaseTest {
         for (WebElement i : listOfTheText) {
             actualText.add(i.getText());
         }
-        SoftAssertions softText = new SoftAssertions();
-        softText.assertThat(actualText).isEqualTo(expectedText);
-        softText.assertThat(listOfTheText.size()).isEqualTo(4);
-        softText.assertAll();
+        SoftAssertions softAssertions = new SoftAssertions();
+        softAssertions.assertThat(actualText).isEqualTo(expectedText);
+        softAssertions.assertThat(listOfTheText.size()).isEqualTo(4);
+        softAssertions.assertAll();
     }
 
     //8. Assert that there is the iframe with Frame Button exist
@@ -140,9 +134,9 @@ public class TestEx1 extends BaseTest {
         for (WebElement i : sideMenuItems) {
             actualMenu.add(i.getText());
         }
-        SoftAssertions softLeftMenu = new SoftAssertions();
-        softLeftMenu.assertThat(actualMenu.size()).isEqualTo(5);
-        softLeftMenu.assertThat(actualMenu).isEqualTo(expectedMenu);
-        softLeftMenu.assertAll();
+        SoftAssertions softAssertions = new SoftAssertions();
+        softAssertions.assertThat(actualMenu.size()).isEqualTo(5);
+        softAssertions.assertThat(actualMenu).isEqualTo(expectedMenu);
+        softAssertions.assertAll();
     }
 }
