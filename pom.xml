@@ -56,7 +56,37 @@
         </dependency>
 
     </dependencies>
-
+    <profiles>
+        <profile>
+            <id>AdditionSubtraction</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.file>suiteAddSubtractionTest.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>MultiplicationDivision</id>
+            <properties>
+                <suite.xml.file>suiteMultipleDivideTest.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>AllTest</id>
+            <properties>
+                <suite.xml.file>suiteToRunAllTest.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>suiteRunAllTest.Hw2</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.file>SuiteTestHM2.xml</suite.xml.file>
+            </properties>
+        </profile>
     <profile>
         <id>hw3</id>
         <activation>
@@ -66,4 +96,5 @@
             <suite.xml>hw3.xml</suite.xml>
         </properties>
     </profile>
+    </profiles>
 </project>

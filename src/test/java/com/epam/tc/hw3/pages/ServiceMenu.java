@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ServiceMenu {
-    @FindBy(xpath = "//li/a[text()='Support")
+    @FindBy(xpath = "//a[contains(text(), 'Support')]")
     private WebElement support;
 
-    @FindBy(xpath = "//li/a[text()='Different elements']")
+    @FindBy(xpath = "//a[contains(text(), 'Different elements')]")
     private WebElement differentElements;
 
-    public void ServiceMenu(WebDriver driver) {
+    public ServiceMenu(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 

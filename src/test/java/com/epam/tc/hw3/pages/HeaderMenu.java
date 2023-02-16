@@ -10,22 +10,46 @@ public class HeaderMenu {
     WaitActions waitActions;
     private final ServiceMenu serviceMenu;
 
-    @FindBy(xpath = "//li[a='Home']")
+    @FindBy(xpath = "//a[contains(text(), 'Home')]")
     private WebElement homeMenu;
 
-    @FindBy(xpath = "//li[a='Contact form']")
+    @FindBy(xpath = "//a[contains(text(), 'Contact form')]")
     private WebElement contactFormMenu;
 
-    @FindBy(xpath = "//li[@class='dropdown']")
+    @FindBy(xpath = "//*[@class='dropdown']/a")
     private WebElement serviceSubMenu;
 
-    @FindBy(xpath = "//li[a='Metals & Colors']")
+    @FindBy(xpath = "//a[contains(text(), 'Metals & Colors')]")
     private WebElement metalsAndColoursMenu;
 
     public HeaderMenu(WebDriver driver) {
         PageFactory.initElements(driver, this);
         waitActions = new WaitActions(driver);
-        serviceMenu = new ServiceMenu();
+        serviceMenu = new ServiceMenu(driver);
+    }
+    public String[] getHeaderItemNames() {
+        String[] itemNames = new String[4];
+        itemNames[0] = homeMenu.getText();
+        itemNames[1] = contactFormMenu.getText();
+        itemNames[2] = serviceSubMenu.getText();
+        itemNames[3] = metalsAndColoursMenu.getText();
+        return itemNames;
+    }
+
+    public boolean isHomeMenuDisplayed() {
+        return homeMenu.isDisplayed();
+    }
+
+    public boolean isContactFormMenuDisplayed() {
+        return contactFormMenu.isDisplayed();
+    }
+
+    public boolean isServiceSubMenuDisplayed() {
+        return serviceSubMenu.isDisplayed();
+    }
+
+    public boolean isMetalsAndColoursMenu() {
+        return metalsAndColoursMenu.isDisplayed();
     }
 
     public void clickHomeMenu() {
